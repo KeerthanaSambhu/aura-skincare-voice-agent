@@ -1,0 +1,47 @@
+{
+  "session_id": "b1344599e8714fff9333d398491ec963",
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Hi, I'm Aria from Aura Skincare. How can I help?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Where is my order ORD-101?"
+    },
+    {
+      "speaker": "agent",
+      "text": "It's out for delivery with BlueDart and expected by 6 PM today."
+    }
+  ],
+  "summary": {
+    "session_id": "b1344599e8714fff9333d398491ec963",
+    "started_at": "2026-10-17T04:30:00+00:00",
+    "ended_at": "2026-10-17T04:30:00+00:00",
+    "duration_seconds": 0,
+    "end_reason": "customer_ended",
+    "customer_intent": "ORDER_TRACKING",
+    "customer_issue": "Where is my order ORD-101?",
+    "order_id": "ORD-101",
+    "order_ids": [
+      "ORD-101"
+    ],
+    "actions_taken": [
+      {
+        "tool": "get_order_details",
+        "order_id": "ORD-101",
+        "ok": true,
+        "outcome": "Out for Delivery",
+        "at": "2026-10-17T04:30:00+00:00"
+      }
+    ],
+    "resolution_status": "RESOLVED",
+    "final_outcome": "Aria answered using order records and policy checks.",
+    "follow_up_required": false,
+    "follow_up_reasons": [],
+    "unresolved_issues": [],
+    "call_summary": "Looked up ORD-101: Out for Delivery, Expected by 6 PM today.",
+    "transcript_turns": 3,
+    "summary_source": "rules: built from tools this server executed and the call transcript; no AI-written text"
+  }
+}

@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+/* ─── Design tokens ─────────────────────────────────────────────
+   One source for colour, type, radius and motion. Tailwind v4 turns
+   each --color-* / --font-* / --radius-* / --ease-* into utilities
+   (bg-paper, font-display, rounded-slip, ease-aura, …). */
+@theme {
+  /* Surfaces */
+  --color-paper: #f5f3eb; /* warm ivory page */
+  --color-paper-white: #fcfbf7; /* raised surfaces */
+  --color-line: #e3e0d4; /* hairlines and borders */
+
+  /* Ink */
+  --color-ink: #262724; /* charcoal text */
+  --color-ink-muted: #63645c; /* secondary text, 5.5:1 on paper */
+
+  /* Accents */
+  --color-sage: #a3b096;
+  --color-sage-wash: #e6eadd;
+  --color-olive: #4f5a3a; /* primary actions, 7:1 with paper-white */
+  --color-olive-deep: #3d4630;
+  --color-amber: #b9822a; /* "in transit" status only */
+  --color-alert: #9a3b2f; /* errors only */
+
+  /* Type */
+  --font-display: "Bodoni Moda Variable", "Didot", "Bodoni 72", Georgia, serif;
+  --font-sans: "Hanken Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* Radius: hierarchy, not one value everywhere */
+  --radius-tag: 6px;
+  --radius-slip: 14px;
+  --radius-panel: 28px;
+
+  /* Motion */
+  --ease-aura: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-quick: 200ms;
+  --duration-calm: 450ms;
+  --duration-slow: 800ms;
+}
+
+:root {
+  --nav-height: 4.5rem;
+  color-scheme: light;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--color-paper);
+  min-height: 100dvh;
+}
+
+/* Anchors land below the sticky nav, with or without Lenis */
+section[id] {
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+
+/* Bodoni needs its optical size set to stay elegant at display sizes */
+.font-display {
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 72;
+}
+
+/* Visible, consistent keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--color-olive);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--color-sage-wash);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

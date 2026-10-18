@@ -1,0 +1,13 @@
+# Runtime dependencies, pinned to the exact versions the tests ran against.
+# Dev tools (pytest, ruff, mypy) are in requirements-dev.txt.
+fastapi==0.143.3
+# FastAPI only requires starlette>=0.46.0; pinned so every install gets the
+# version tested here (its TestClient uses httpx2, see requirements-dev.txt).
+starlette==1.8.0
+uvicorn[standard]==0.54.0
+pydantic==2.14.1
+pydantic-settings==2.16.0
+# Gemini SDK, used only on the server to mint ephemeral Live tokens.
+google-genai==2.31.0
+# IANA time-zone data for zoneinfo; Windows has none built in.
+tzdata==2026.5

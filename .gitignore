@@ -1,0 +1,14 @@
+gitignore
+node_modules/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+*.db
+.DS_Store
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/

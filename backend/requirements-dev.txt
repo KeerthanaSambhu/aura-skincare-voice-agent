@@ -1,0 +1,9 @@
+-r requirements.txt
+
+# Tests, lint and type checks
+pytest==9.1.1
+# HTTP client for fastapi.testclient / starlette.testclient. Starlette >= 1.2.0
+# uses httpx2; falling back to plain httpx is deprecated in Starlette 1.8.0.
+httpx2==2.13.1
+ruff==0.17.1
+mypy==2.4.0

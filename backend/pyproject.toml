@@ -1,0 +1,25 @@
+[project]
+name = "aura-ai-backend"
+version = "0.3.0"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["RUF001"]  # ₹ and – are intentional in policy text
+
+[tool.ruff.lint.per-file-ignores]
+# Aria's system instruction is prose for the model; wrapping it would only hurt readability.
+"app/voice/prompt.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["app"]
