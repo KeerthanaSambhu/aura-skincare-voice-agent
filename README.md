@@ -50,7 +50,7 @@ npm run dev                            # http://localhost:5173
 
 The frontend calls the backend at `http://localhost:8000`. To use another address, set `VITE_API_BASE_URL` in `frontend/.env.local` (see `frontend/.env.example`; it's public, never a key) and restart `npm run dev`.
 
-Open <http://localhost:5173>, click **Start call**, and allow the microphone when the browser asks. Without `GEMINI_API_KEY` the page still works, but Start call explains that voice isn't set up.
+Open <[(https://aura-skincare-voice-agent-notkeerthana.vercel.app/)]>, click **Start call**, and allow the microphone when the browser asks. Without `GEMINI_API_KEY` the page still works, but Start call explains that voice isn't set up.
 
 **Browser requirements:** a recent Chrome, Edge, Firefox or Safari; microphone permission; and a secure page (`https://` or `localhost`). Use headphones for the best results; echo cancellation is on, but speakers can still trigger an interruption.
 
