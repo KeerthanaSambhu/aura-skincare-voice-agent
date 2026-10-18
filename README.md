@@ -112,3 +112,21 @@ frontend/
 ```
 
 Third-party code and licenses: see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Engineering Decisions & Reflections
+
+### 1. Why did you choose this architecture and technology stack?
+
+I chose React with Vite for a responsive frontend and FastAPI for the backend because they provide a lightweight, modular architecture that is straightforward to develop and maintain. Gemini Live enables real-time voice conversations, while the backend handles order operations, business rules, and secure voice session setup. Vercel and Render provide accessible deployment options for the frontend and backend.
+
+### 2. What was the most difficult part of the assignment, and how did you solve it?
+
+The most difficult part was integrating real-time voice interaction with the backend and deploying the application reliably. I tested the API endpoints, checked deployment logs, and debugged environment variable and CORS configuration issues until the frontend could communicate with the backend and the voice experience worked as expected.
+
+### 3. If you had one more week, what would you improve first and why?
+
+I would first improve automated end-to-end testing and error handling for voice sessions, order lookups, and cancellation workflows. This would help identify failures earlier and make the customer experience more reliable, particularly when network connectivity or the voice service is interrupted.
+
+### 4. What would need to change if the agent handled 1,000 customer conversations a day?
+
+I would introduce a production-grade database, stronger monitoring and logging, rate limiting, and more robust error recovery. I would also evaluate concurrent voice-session capacity, Gemini API quotas and costs, and backend scaling requirements, while adding automated load tests to identify bottlenecks before increasing traffic.
